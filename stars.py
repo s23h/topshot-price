@@ -10,6 +10,8 @@ import pandas
 import streamlit as st
 from streamlit_lottie import st_lottie
 
+nltk.download('punkt')
+
 def get_lowest_ask(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
