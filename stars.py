@@ -48,7 +48,7 @@ lottie_json = load_lottieurl(lottie_url)
 
 st.header('Seeing Stars 2')
 
-df = pd.read_excel('LeBron_SS.xlsx', header=1).loc[:11]
+df = pd.read_excel('LeBron_SS.xlsx', header=1, engine='openpyxl').loc[:11]
 df = df[df.columns[:-3]]
 
 df['live_price'] = df.apply(lambda x:  get_lowest_ask(x['Topshot']), axis=1)
